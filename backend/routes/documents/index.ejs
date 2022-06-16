@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			background-color: #4CAF50;
+			color: white;
+			font-weight: bold;
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			text-align: center;
+			padding: 5px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+	</style>
+</head>
+
+<body>
+	<header>hlo</header>
+	<div style="width: 100%;">
+		<img src="<%= http://ajna.ai/assets/img/white-logo.png %>" alt="" class="logo" />
+		<h3 style="text-align: center;">Footfall Analysis</h3>
+		<div style="text-align: center; padding-left: 20px;padding-right: 20px;">
+			<!-- <table> -->
+			<div><img style="width: 100%;" src="<%= url.first %>" /></div>
+			<div><img style="width: 100%;" src="<%= url.second %>" /></div>
+			<div><img style="width: 100%;" src="<%= url.third %>" /></div>
+			<div><img style="width: 100%;" src="<%= url.fourth %>" /></div>
+			<!-- </table> -->
+			<br />
+			<table id="customers" style="font-size: 10px;">
+				<% if (students.length > 0) { %>
+				<tr>
+					<!-- <th>ClientID</th> -->
+					<th>Serial No.</th>
+					<th>Branch</th>
+					<th>camera</th>
+					<th>Timestamp</th>
+					<th>Zone</th>
+					<th>PercentValue</th>
+					<th>Density</th>
+				</tr>
+				<% students.forEach(student => {%>
+				<tr>
+					<!-- <td><%= student.ClientID %></td> -->
+					<td><%= student.key %></td>
+					<td><%= student.branch %></td>
+					<td><%= student.camera %></td>
+					<td><%= student.Timestamp %></td>
+					<td><%= student.Zone %></td>
+					<td><%= student.PercentValue %></td>
+					<td><%= student.Density %></td>
+				</tr>
+				<%	});%>
+				<% }%>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>

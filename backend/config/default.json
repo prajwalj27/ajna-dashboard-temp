@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://AjnaUserManagement:ajna@123@cluster0.pwyev.mongodb.net/AjnaUserManagement?retryWrites=true&w=majority",
+    "jwtSecret": "48a3aff9c14f355484dc33086e1598d596632f457770eeffc26ec08c0179798cee9532561452ae7eef261aeb76195848256909e97423d661e3499130da55a502",
+    "email": "",
+    "password": ""
+}

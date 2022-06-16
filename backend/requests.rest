@@ -1,0 +1,16 @@
+GET http://localhost:4000/api/home
+
+###
+POST http://localhost:4000/api/auth/client
+Content-Type: application/json
+
+{
+    "email":"client@gmail.com",
+    "password":"123456",
+    "userType":"client"
+}
+
+###
+
+GET http://localhost:4000/api/clients
+x-auth-token : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA2ZmUzNDM0MzJmZDIwNTgzNWRmZWY2IiwidXNlclR5cGUiOiJjbGllbnQifSwiaWF0IjoxNjE4MDQ0NjYzLCJleHAiOjE2MTgxMzEwNjN9.74ztuxL6udAvDLoMoK_8KOFQtE5IMujznb7DGXn_I7Y

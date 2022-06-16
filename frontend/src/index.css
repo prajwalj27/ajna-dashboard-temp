@@ -1,0 +1,20 @@
+.custom-modal-style {
+  width: 397px !important;
+  height: 397px !important;
+}
+
+.pdf-csv-selection {
+  background-color: "white";
+  border: "1px solid white";
+  font-size: "13px";
+  padding: "1px 34px";
+}
+
+.custom-modal-video {
+  width: 500px !important;
+  height: 500px !important;
+}
+.full-page {
+  width: 100vw;
+  height: 100vh;
+}
