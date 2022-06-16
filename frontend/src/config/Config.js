@@ -6,7 +6,7 @@ const dev = {
 
 // production variables name
 const prod = {
-  hostName: "http://3.128.120.207",
+  hostName: "http://espl.ajna.ai/data",
   cookie_expiration: 7200,
 };
 const config = process.env.REACT_APP_STAGE === "production" ? prod : dev;
