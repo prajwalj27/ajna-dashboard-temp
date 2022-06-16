@@ -42,19 +42,17 @@ const App = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    const redirectURL = "http://espl.ajna.ai/#/pages/login";
+    // const redirectURL = "http://localhost:3000/#/pages/login";
     // const encryptedData = dataEncryption(userData);
     // const response = await axios.get(
     //   `http://localhost:8080/redirect-login/?data=${encryptedData}`
-    // );
+    // );redirectURL
     // console.log(response.data);
     // console.log("Let's navigate to the dashboard");
-    window
-      .open(`http://localhost:3000/#/pages/login/?token=${token}`, "_blank")
-      .focus();
+    window.open(`${redirectURL}/?token=${token}`, "_blank").focus();
   };
-  
-  // http://localhost:3000/dashboard/?token=${token}
+
   return (
     <div className="App">
       <h1>App 2</h1>
@@ -89,7 +87,7 @@ const App = () => {
       )}
       <br />
       <br />
-      <br />  
+      <br />
 
       <label htmlFor="token">Token -</label>
       <input
