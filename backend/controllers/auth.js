@@ -141,21 +141,33 @@ exports.userSignin = async (req, res) => {
 
 exports.userSigninAndRedirect = async (req, res) => {
   const privateKey = `
-    -----BEGIN RSA PRIVATE KEY-----
-    MIICXQIBAAKBgQDlOJu6TyygqxfWT7eLtGDwajtNFOb9I5XRb6khyfD1Yt3YiCgQ
-    WMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76xFxdU6jE0NQ+Z+zEdhUTooNR
-    aY5nZiu5PgDB0ED/ZKBUSLKL7eibMxZtMlUDHjm4gwQco1KRMDSmXSMkDwIDAQAB
-    AoGAfY9LpnuWK5Bs50UVep5c93SJdUi82u7yMx4iHFMc/Z2hfenfYEzu+57fI4fv
-    xTQ//5DbzRR/XKb8ulNv6+CHyPF31xk7YOBfkGI8qjLoq06V+FyBfDSwL8KbLyeH
-    m7KUZnLNQbk8yGLzB3iYKkRHlmUanQGaNMIJziWOkN+N9dECQQD0ONYRNZeuM8zd
-    8XJTSdcIX4a3gy3GGCJxOzv16XHxD03GW6UNLmfPwenKu+cdrQeaqEixrCejXdAF
-    z/7+BSMpAkEA8EaSOeP5Xr3ZrbiKzi6TGMwHMvC7HdJxaBJbVRfApFrE0/mPwmP5
-    rN7QwjrMY+0+AbXcm8mRQyQ1+IGEembsdwJBAN6az8Rv7QnD/YBvi52POIlRSSIM
-    V7SwWvSK4WSMnGb1ZBbhgdg57DXaspcwHsFV7hByQ5BvMtIduHcT14ECfcECQATe
-    aTgjFnqE/lQ22Rk0eGaYO80cc643BXVGafNfd9fcvwBMnk0iGX0XRsOozVt5Azil
-    psLBYuApa66NcVHJpCECQQDTjI2AQhFc1yRnCU/YgDnSpJVm1nASoRUnU8Jfm3Oz
-    uku7JUXcVpt08DFSceCEX9unCuMcT72rAQlLpdZir876
-    -----END RSA PRIVATE KEY-----`;
+  -----BEGIN RSA PRIVATE KEY-----
+  MIIEowIBAAKCAQEAhcGz/pPv0Y40/MLNuYAFDyOE2Ku1I4HVuiZ15sSkxvwDIFjk
+  ktn0v9tuDhvR22kooDhE6jLarIjWMU1PPet3DOaop1MNm7BFuGaeNKzZJk8yAjTG
+  Z5jgFxDgJaCTHxQ7bGDFINnL34uQ/588Auk0okLAnVfnDDPoscmxg0HHTi35HY+n
+  esJr4TAq+9JRV92Im2dMxL8BM+xzteTkd0AfwAFgAIv7+wV+MhxgXFwGRzjF4yi+
+  uzROF/mmgEJ7aplVrUldi9a2ZhX/Bwnnq+NiH3UukdvO324FOEdTN79UaWyOHrfd
+  nB7SSKic8U7FieKlNK4Jv5Po9nIpm5brMghUTwIDAQABAoIBAAoTeoS+Dj3iEZnM
+  7wR/YWIvkc1kugOPv1MDnLQisisPRwkDyUxKwQZG+HZ1oAyAUoAnXQGrjQ+cS05x
+  fXuzpkdBhQj917OXxtjKWjarorwhESpbYWrieFckfU44V3zq4EMc0xzTa2lOsUCg
+  dTve54klsC7qNUyVCH2ELSwvI11/OuZMFr+Yup1o37Je2vosEk4HhMdf7VMOryEz
+  BVfdP6bi0TxeQh3ucyVKoPcDXbg5bKNRYQ7r7uJDaLNd2TAtxS9QsBP5LflW5vIe
+  xRjHrQZ3/JuNf3wVlkg67TwuqjsVllxOXzZwZjgDIoYfsFwNH+I+jnqShFBJY+Su
+  dIREr6ECgYEA12RMSSRrrefhKg77Qx1qzSyCKV5ePDKJqKho9ReQV66PcSL9Tnsy
+  S9ca6riUYJ4K6iBnQupTyTZXkIGNTiTAXGGX/ahYcux7ZYYNT3XVGHeaW7Rw74Oi
+  tcmOI4JZk2AJsLTaoSYp2FQF1uFV2tTUCWbPp2cCpeBJNdqWcn2QvrECgYEAnvla
+  wIMQQy2NK5Z5wNyXUN6LY9vx3u7SbHprkrfBOrV8FwrMuJYKaqE6EfHACdzelPFE
+  chqPo08h2rz7Jm1CHRHvUaWD3dDGm7t99RqV16ytMFQatIyi5cPNzMRI2a4U9UWH
+  ZFiGPEE0dCwrZZz41WTlCSbJ1wjMEs9za4xtAv8CgYEA00pHb0S0AK/D+H8jyg20
+  dDqiILS62nB1C6bQ9wS7itfpTIGXXQKLL0x+0hxpKXI/oLZStZiqwmp1cYM0u6Bf
+  tv/hmmonAe2risb6jaU4ejzxhd43Hy3RUmS682huOJzwRJDVG1oVmGmsJMN9diJr
+  MiHRuBTbyx5+kr6v8PXuJLECgYAz2sA4ZUfrsbMHkbi7KPkOftjWxMp7Xkky6yel
+  ntyfis0kMvieCQryxw5LBiEO1oWf7abW1UUfDtPLJrOBUEgtdUkrx6JguxXdfGXU
+  ikxwIjoHtpdTZ0BHU/wQG8JrhrX9XyWPnLSEePxkHHg3V+Fusc9nkchqpMr0I8jR
+  Pufb/wKBgB3xq7bKYo59rtPUaZyTICDJnt1w9BNJrnkNwZMi4pNVm+9nfCBoYiXB
+  NznN7GqqxgAnZ94GqHQPHsh911m7/kMGvQJIDjWEA1cO8H1I7Y/BHbI4Mw/LX2Ap
+  P7UvXJBvKJrUdLcxV7hwUhQGkVxk7NBT9gaEhHkvIQXRWMThAKrQ
+  -----END RSA PRIVATE KEY-----`;
 
   const encryptedData = req.query.data;
   // console.log(encryptedData)
@@ -201,7 +213,7 @@ exports.userSigninAndRedirect = async (req, res) => {
     };
     jwt.sign(payload, jwtSecret, { expiresIn: "24h" }, (err, token) => {
       if (err) throw err;
-      res.json({ token });
+      res.json({ token, decryptedData: decryptedData});
     });
   } catch (err) {
     console.error(err.message);
