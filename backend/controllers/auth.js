@@ -213,7 +213,7 @@ exports.userSigninAndRedirect = async (req, res) => {
     };
     jwt.sign(payload, jwtSecret, { expiresIn: "24h" }, (err, token) => {
       if (err) throw err;
-      res.json({ token, decryptedData: decryptedData});
+      res.json({ token });
     });
   } catch (err) {
     console.error(err.message);
